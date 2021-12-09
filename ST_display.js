@@ -48,7 +48,7 @@ http.createServer(function (req, res)
             
 
             
-
+	res.end();
             // if (user_selected == "Company Name") {
                 
             //     res.write("Company Name: " + user_input + "<br>");
