@@ -2,7 +2,7 @@
   "name": "StockTicker",
   "version": "1.0.0",
   "description": "my StockTicker node app",
-  "main": "StockTicker.js",
+  "main": "StockTickerjs",
   "scripts": {
   "start": "node StockTicker.js"
 },
