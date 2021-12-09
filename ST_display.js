@@ -12,7 +12,7 @@ http.createServer(function (req, res)
 	  
 	  if (req.url == "/")
 	  {
-		  file = './Downloads/cs20_web_programming/ST_interface.html';
+		  file = 'https://winniewyl.github.io/StockTicker/ST_interface.html';
 		  fs.readFile(file, function(err, txt) {
     	  res.writeHead(200, {'Content-Type': 'text/html'});
 		//   res.write("This is the home page<br>");
