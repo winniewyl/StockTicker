@@ -45,46 +45,7 @@ http.createServer(function (req, res)
 
 
             return_arr = [];
-            MongoClient.connect(url, {useUnifiedTopology: true}, async function(err, db) {
-                if (err) {
-                    console.log("Connection error: " + err);
-                    return;
-                } else {
-                    console.log("database connected successfully");     
-                }
-
-
-
-                var dbo = db.db('StockTicker');
-                await dbo.collection('companies').find(theQuery).toArray(async function(err, items) {
-                    if (err) {
-                        console.log("Error: " + err);
-                    } else {
-                        // console.log(items);
-                        if (user_selected == "Company Name") {
-                            return_arr.push(items[0].Ticker);
-                            console.log(return_arr[0]);
-                            
-                            res.write("Company Name: " + user_input + "<br>");
-                            res.write(items[0].Ticker + "<br>");
-                        } else if (user_selected == "Stock Ticker") {
-                            
-                            res.write("Ticker: " + user_input + "<br>");
-                            res.write("Company Names: " + "<br>");
-                            for (i = 0; i < items.length; i++) {
-                                return_arr.push(items[i].Company);
-                                res.write(items[i].Company);
-                            }
-                        }
-
-                        res.end();
-                        
-                    }
-                     
-                });
-                db.close();
-
-            });
+            
 
             
 
